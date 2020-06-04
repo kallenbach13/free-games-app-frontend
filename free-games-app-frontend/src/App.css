@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+.nav-bar {
+  width: 100%;
+  background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
+  background-repeat: no-repeat;
+  font-family: 'IBM Plex Mono';
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
