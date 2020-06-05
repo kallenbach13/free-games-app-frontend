@@ -1,16 +1,17 @@
 import React from 'react';
 import Game from './Game';
 
-const GameList = () => {
+const GameList = (props) => {
 
-//   let displayAllNotes = () => {
-//     return props.notes.map(note => <NoteItem note={note} key={note.id} selectNote={props.selectNote} deleteNote={props.deleteNote} />)
-//   }
+  let displayAllGames = () => {
+    return props.games.map(game => <Game game={game} key={game.id} />)
+  }
 
 return (
     <div className="ui four column grid">
       <div className="row">
         Free Games From GOG
+        {displayAllGames}
       </div>
     </div>
   );
