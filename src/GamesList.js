@@ -11,7 +11,7 @@ return (
     <div className="ui four column grid">
       <div className="row">
         Free Games From GOG
-        {displayAllGames}
+        {displayAllGames()}
       </div>
     </div>
   );

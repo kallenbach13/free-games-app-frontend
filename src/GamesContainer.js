@@ -6,24 +6,26 @@ class GamesContainer extends Component {
 
     state = {
         games: [],
-        searchTerm: null
+        searchTerm: ""
       };
     
-      componentDidMount() {
-        fetch("https://embed.gog.com/games/ajax/filtered?price=free&hide=dlc")
+    componentDidMount() {
+        fetch("http://localhost:3000/games")
           .then(res => res.json())
-          .then(games => {
-              debugger;
-              this.setState({ games })
-            });
-      };
+          .then(games => this.setState({ games }));
+    };
 
+    updateSearchTerm = event => {
+        this.setState({ searchTerm: event.target.value })
+    }
+
+    filteredGames = () => this.state.games.filter(game => game.title.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
 
     render() {
         return (
           <div className="app"> 
-            <Search />
-            <GamesList games={this.state.games} />
+            <Search updateSearchTerm={this.updateSearchTerm} />
+            <GamesList games={this.state.searchTerm ? this.filteredGames() : this.state.games} />
           </div>
         );
     }
