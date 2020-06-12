@@ -30,7 +30,7 @@
 
 .nav-bar {
   width: 100%;
-  background-image: linear-gradient(to right top, #8C33E3, #696CE8, #4A9EEC);
+  background-color: #71eeb8;
   background-repeat: no-repeat;
   font-family: 'IBM Plex Mono';
   font-size: 16px;

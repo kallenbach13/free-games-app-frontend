@@ -10,7 +10,7 @@ const GameList = (props) => {
 return (
     <div className="ui four column grid">
       <div className="row">
-        Free Games From GOG
+        <h3>Free Games</h3>
         {displayAllGames()}
       </div>
     </div>
