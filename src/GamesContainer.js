@@ -8,7 +8,7 @@ class GamesContainer extends Component {
     state = {
         games: [],
         genres: [],
-        filteredGenres: [],
+        filteredGenreIds: [],
         searchTerm: ""
       };
     
@@ -36,16 +36,16 @@ class GamesContainer extends Component {
   updateGenreIdsFilter = (e, genre) => {
     // if checked at then add to array
     if (e.target.checked) {
-      const newArray = [...this.state.filteredGenres, genre]
+      const newArray = [...this.state.filteredGenreIds, genre.id]
       this.setState({
-        filteredGenres: newArray
+        filteredGenreIds: newArray
       })
     }
     // else remove from array
     else {
-      const newArray = this.state.filteredGenres.filter(filteredGenre => genre !== filteredGenre)
+      const newArray = this.state.filteredGenreIds.filter(filteredGenreId => genre.id !== filteredGenreId)
       this.setState({
-        filteredGenres: newArray
+        filteredGenreIds: newArray
       })
     }
   }
@@ -56,16 +56,14 @@ class GamesContainer extends Component {
         this.setState({ searchTerm: event.target.value })
     }
 
-    filteredByGenre = () => {
-      return this.state.games.filter(game => {
-      //check gamegenresids array includes any genres in filter
-      if (this.state.filteredGenres.length === 0) {
+    filteredByGenre = (games) => {
+      return games.filter(game => {
+      if (this.state.filteredGenreIds.length === 0) {
         return true
       }
       else {
-        //const something = game.genres.filter(genre => (genre.id === this.state.filteredGenres[0].id))
-        //return something.length === 0 ? true : false
-        return game.genres.some(r => this.state.filteredGenres.includes(r))
+        const gameGenreIds = game.genres.map(g => g.id)
+        return this.state.filteredGenreIds.every( genreId => gameGenreIds.includes(genreId) )
       }
     })
   }
@@ -74,6 +72,7 @@ class GamesContainer extends Component {
 
     filteredGames = () => {
       const titlesFiltered = this.filteredByTitle(this.state.games)
+
       return this.filteredByGenre(titlesFiltered)
     }
 
@@ -82,7 +81,7 @@ class GamesContainer extends Component {
           <div className="app"> 
             <Search updateSearchTerm={this.updateSearchTerm} />
             <GenreMenu genres={this.state.genres} updateGenreIdsFilter={this.updateGenreIdsFilter}/>
-            <GamesList games={this.filteredByGenre()} />
+            <GamesList games={this.filteredGames()} />
           </div>
         );
     }
