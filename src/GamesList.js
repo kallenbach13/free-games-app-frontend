@@ -10,7 +10,6 @@ const GameList = (props) => {
 return (
     <div className="game-list">
       <div className="row">
-        <h3>Free Games</h3>
         {displayAllGames()}
       </div>
     </div>

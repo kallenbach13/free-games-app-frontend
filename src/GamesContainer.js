@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Search from './Search';
 import GenreMenu from './GenreMenu';
 import GamesList from './GamesList';
+import StoreButtons from './StoreButtons';
 
 class GamesContainer extends Component {
 
@@ -79,8 +80,11 @@ class GamesContainer extends Component {
     render() {
         return (
           <div className="app">
-            <GenreMenu genres={this.state.genres} updateGenreIdsFilter={this.updateGenreIdsFilter}/>
-            <Search updateSearchTerm={this.updateSearchTerm} searchTerm={this.state.searchTerm} />
+            <div className="top-bar">
+                <GenreMenu genres={this.state.genres} updateGenreIdsFilter={this.updateGenreIdsFilter}/>
+                <Search updateSearchTerm={this.updateSearchTerm} searchTerm={this.state.searchTerm} />
+                <StoreButtons/>
+            </div>
             <GamesList games={this.filteredGames()} />
           </div>
         );

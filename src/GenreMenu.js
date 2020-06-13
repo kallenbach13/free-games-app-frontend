@@ -7,9 +7,13 @@ const GenreMenu = (props) => {
     }
 
   return (
-      <div className="checkbox-field">
+    <div className="checkbox-field">
+      <div className="row">
+        <div className="col-sm-6">
           {displayAllGenreCheckBoxes()}
-      </div>    
+        </div>
+      </div>
+    </div>    
   );
 }
 

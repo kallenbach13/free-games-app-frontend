@@ -1,41 +1,28 @@
+
+body {
+  background-color: white;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+#title {
+  color: #ffe0e5;
+  font-size: 70px;
+  font-weight: 100;
+  font-family: 'Yesteryear', cursive;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 }
 
 .nav-bar {
   width: 100%;
-  background-color: #71eeb8;
   background-repeat: no-repeat;
-  font-family: 'IBM Plex Mono';
+  background-color: #88f1c4;
   font-size: 16px;
+  height: 150px;
   letter-spacing: 1.5px;
-  font-weight: bolder;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -43,23 +30,39 @@
   margin-bottom: 10px;
 }
 
+.store-buttons {
+  display: inline-block;
+}
+
+#gog-button {
+  margin-right: 10px;
+}
+
 .image-item {
-  width: 70%;
-  height: 70%
+  width: 200px;
+  height: 100px;
+}
+
+.col-sm-3 {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
 }
 
 .game-card {
- background-color: lightgray;
- display:inline-block;
- width: 30%;
- border-radius: 25px;
- border:1px;
- background:#eee;
- padding:5px;
- margin:5px;
+ background-color: #ffe0e5;
+ width: 90%;
+ border-radius: 30px;
+ padding-top: 10px;
+ cursor: pointer;
 }
 
 .game-list {
-  display: inline-block;
+  /* display: inline-block; */
 }
+
+.checkbox-field {
+  /* display: inline-block; */
+}
+
 
