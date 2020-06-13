@@ -78,9 +78,9 @@ class GamesContainer extends Component {
 
     render() {
         return (
-          <div className="app"> 
-            <Search updateSearchTerm={this.updateSearchTerm} />
+          <div className="app">
             <GenreMenu genres={this.state.genres} updateGenreIdsFilter={this.updateGenreIdsFilter}/>
+            <Search updateSearchTerm={this.updateSearchTerm} searchTerm={this.state.searchTerm} />
             <GamesList games={this.filteredGames()} />
           </div>
         );
