@@ -1,20 +1,33 @@
 import React from 'react';
 
-const GenreMenu = (props) => {
+class GenreMenu extends React.Component {
 
-    let displayAllGenreCheckBoxes = () => {
-      return props.genres.map(genre => <><input onChange={(e) => props.updateGenreIdsFilter(e, genre)} type="checkbox" id={genre.name} name={genre.name}/><label for={genre.name}>{genre.name}</label></>)
+  state = {
+    showMenu: false,
+  }
+
+    displayAllGenreCheckBoxes = () => {
+    return this.props.genres.map(genre => <div className="col-sm-6"><div className="checkbox"><label><input onChange={(e) => this.props.updateGenreIdsFilter(e, genre)} type="checkbox" id={genre.name} name={genre.name}/> {genre.name}</label></div></div>)
     }
 
-  return (
-    <div className="checkbox-field">
-      <div className="row">
-        <div className="col-sm-6">
-          {displayAllGenreCheckBoxes()}
-        </div>
+    toggleMenu = () => {
+      this.setState({ showMenu: !this.state.showMenu })
+    }
+
+    render() {
+      return <>
+      <div className="checkbox-field-containter">
+      <button  className="btn btn-info" onClick={this.toggleMenu}>Select Genre(s)</button>
+        <div className="checkbox-field">
+      {
+        this.state.showMenu
+        ? <div className="overflow-auto"><div className="row">{this.displayAllGenreCheckBoxes()}</div></div>
+        : null
+      }
+          </div>
       </div>
-    </div>    
-  );
+    </>
+  }
 }
 
 export default GenreMenu;
