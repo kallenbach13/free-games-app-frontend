@@ -56,17 +56,22 @@ body {
   margin-right: 15px;
 }
 
-.store-buttons {
-  display: inline-block;
+.filter {
+  margin-right: 300px;
 }
 
-#gog-button {
+.store-buttons {
+  display: inline-block;
+  margin-right: 100px;
+}
+
+#steam-button {
   margin-right: 10px;
 }
 
 .image-item {
-  width: 200px;
-  height: 100px;
+  width: 85%;
+  height: auto;
 }
 
 .col-sm-3 {

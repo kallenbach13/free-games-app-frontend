@@ -5,8 +5,8 @@ const StoreButtons = (props) => {
 
   return (
     <div className="store-buttons">
-      <button id="gog-button" class="btn btn-info">GOG</button>
-      <button id="steam-button" class="btn btn-info">Steam</button>
+      <button onClick={props.toggleSteamState} id="steam-button" class="btn btn-info">Steam</button>
+      <button onClick={props.toggleGogState} id="gog-button" class="btn btn-info">GOG</button>
     </div>
   );
 }

@@ -10,7 +10,9 @@ class GamesContainer extends Component {
         games: [],
         genres: [],
         filteredGenreIds: [],
-        searchTerm: ""
+        searchTerm: "",
+        gogState: false,
+        steamState: false,
       };
     
     componentDidMount() {
@@ -22,39 +24,52 @@ class GamesContainer extends Component {
         .then(genres => this.setState({ genres }));
     };
 
-  //   updateGames = (e) => {
-  //     if (e.target.checked) {
-  //         const currentState = [...this.state.games];
-  //         debugger
-  //         const newState = currentState.filter(game => game.genres.includes(e.target.name));
-  //         // this.setState({
-  //         //     games: newState
-  //         // })
-  //         console.log(newState)
-  //     }
-  // };
+    toggleGogState = () => {
+      console.log("gog")
+      this.setState({ 
+        gogState: !this.state.gogState,
+        steamState: false
+      })
+    }
 
-  updateGenreIdsFilter = (e, genre) => {
-    // if checked at then add to array
-    if (e.target.checked) {
-      const newArray = [...this.state.filteredGenreIds, genre.id]
-      this.setState({
-        filteredGenreIds: newArray
+    toggleSteamState = () => {
+      console.log("steam")
+      this.setState({ 
+        steamState: !this.state.steamState,
+        gogState: false
       })
     }
-    // else remove from array
-    else {
-      const newArray = this.state.filteredGenreIds.filter(filteredGenreId => genre.id !== filteredGenreId)
-      this.setState({
-        filteredGenreIds: newArray
-      })
+
+    updateGenreIdsFilter = (e, genre) => {
+      if (e.target.checked) {
+        const newArray = [...this.state.filteredGenreIds, genre.id]
+        this.setState({
+          filteredGenreIds: newArray
+        })
+      }
+      else {
+        const newArray = this.state.filteredGenreIds.filter(filteredGenreId => genre.id !== filteredGenreId)
+        this.setState({
+          filteredGenreIds: newArray
+        })
+      }
     }
-  }
 
 
 
     updateSearchTerm = event => {
         this.setState({ searchTerm: event.target.value })
+    }
+
+    filteredByStore = (games) => { 
+
+      if (this.state.steamState) {
+        return games.filter(game => game.game_store_id === 1)
+      } else if (this.state.gogState) {
+        return games.filter(game => game.game_store_id === 2)
+      } else {
+        return this.state.games
+      }
     }
 
     filteredByGenre = (games) => {
@@ -73,8 +88,8 @@ class GamesContainer extends Component {
 
     filteredGames = () => {
       const titlesFiltered = this.filteredByTitle(this.state.games)
-
-      return this.filteredByGenre(titlesFiltered)
+      const genresFiltered = this.filteredByGenre(titlesFiltered)
+      return this.filteredByStore(genresFiltered)
     }
 
     render() {
@@ -83,7 +98,7 @@ class GamesContainer extends Component {
             <div className="top-bar">
                 <GenreMenu genres={this.state.genres} updateGenreIdsFilter={this.updateGenreIdsFilter}/>
                 <Search updateSearchTerm={this.updateSearchTerm} searchTerm={this.state.searchTerm} />
-                <StoreButtons/>
+                <StoreButtons toggleGogState={this.toggleGogState} toggleSteamState={this.toggleSteamState}/>
             </div>
             <GamesList games={this.filteredGames()} />
           </div>
