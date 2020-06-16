@@ -55,8 +55,6 @@ class GamesContainer extends Component {
       }
     }
 
-
-
     updateSearchTerm = event => {
         this.setState({ searchTerm: event.target.value })
     }
