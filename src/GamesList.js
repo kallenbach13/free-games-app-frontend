@@ -8,11 +8,14 @@ const GameList = (props) => {
   }
 
 return (
+    <>
+    <p>Showing {props.games.length} Results</p>
     <div className="game-list">
       <div className="row">
         {displayAllGames()}
       </div>
     </div>
+    </>
   );
 }
 

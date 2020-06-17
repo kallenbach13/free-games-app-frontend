@@ -12,7 +12,7 @@ const Search = (props) => {
     <div className="filter">
       <input
         id="search-bar"
-        class="form-control"
+        className="form-control"
         type="text"
         placeholder="Search Titles..."
         onChange={(event) => {props.updateSearchTerm(event)}}

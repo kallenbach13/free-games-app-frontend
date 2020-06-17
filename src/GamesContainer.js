@@ -25,7 +25,6 @@ class GamesContainer extends Component {
     };
 
     toggleGogState = () => {
-      console.log("gog")
       this.setState({ 
         gogState: !this.state.gogState,
         steamState: false
@@ -33,7 +32,6 @@ class GamesContainer extends Component {
     }
 
     toggleSteamState = () => {
-      console.log("steam")
       this.setState({ 
         steamState: !this.state.steamState,
         gogState: false
@@ -60,13 +58,12 @@ class GamesContainer extends Component {
     }
 
     filteredByStore = (games) => { 
-
       if (this.state.steamState) {
         return games.filter(game => game.game_store_id === 1)
       } else if (this.state.gogState) {
         return games.filter(game => game.game_store_id === 2)
       } else {
-        return this.state.games
+        return games
       }
     }
 
@@ -96,7 +93,7 @@ class GamesContainer extends Component {
             <div className="top-bar">
                 <GenreMenu genres={this.state.genres} updateGenreIdsFilter={this.updateGenreIdsFilter}/>
                 <Search updateSearchTerm={this.updateSearchTerm} searchTerm={this.state.searchTerm} />
-                <StoreButtons toggleGogState={this.toggleGogState} toggleSteamState={this.toggleSteamState}/>
+                <StoreButtons toggleGogState={this.toggleGogState} toggleSteamState={this.toggleSteamState} steamState={this.state.steamState} gogState={this.state.gogState}/>
             </div>
             <GamesList games={this.filteredGames()} />
           </div>
