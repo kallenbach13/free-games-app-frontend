@@ -73,6 +73,7 @@ body {
   width: 85%;
   height: auto;
   padding-bottom: 10px;
+  border-radius: 10px;
 }
 
 .col-sm-3 {
