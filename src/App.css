@@ -102,11 +102,13 @@ body {
 }
 
 #developer-name{
-
+  color: black;
+  font-family: Futura, serif;
+  font-size: medium;
 }
 
 #publisher-name{
-
+  
 }
 
 
