@@ -108,7 +108,9 @@ body {
 }
 
 #publisher-name{
-  
+  color: black;
+  font-family: Futura, serif;
+  font-size: medium;
 }
 
 
