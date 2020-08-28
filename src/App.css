@@ -79,7 +79,7 @@ body {
 .col-sm-3 {
   display: flex;
   justify-content: space-around;
-  padding-top: 10px;
+  padding-top: 12px;
 }
 
 .game-card {
