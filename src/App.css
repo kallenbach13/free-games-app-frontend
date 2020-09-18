@@ -27,7 +27,7 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .top-bar {
