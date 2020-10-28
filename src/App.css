@@ -12,7 +12,7 @@ body {
   font-size: 110px;
   font-weight: 95;
   font-family: 'Yesteryear', cursive;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: white;
 }
 
