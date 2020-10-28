@@ -102,7 +102,7 @@ body {
 }
 
 #developer-name{
-  color: white;
+  color: lightgrey;
   font-family: Futura, serif;
   font-size: small;
   -webkit-text-stroke-width: 0.2px;
@@ -110,7 +110,7 @@ body {
 }
 
 #publisher-name{
-  color: white;
+  color: lightgrey;
   font-family: Futura, serif;
   font-size: small;
   -webkit-text-stroke-width: 0.2px;
