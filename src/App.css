@@ -62,7 +62,7 @@ body {
 
 .store-buttons {
   display: inline-block;
-  padding-right: 85px;
+  padding-right: 80px;
 }
 
 #steam-button {
@@ -73,7 +73,7 @@ body {
   width: 95%;
   height: auto;
   padding-bottom: 5px;
-  border-radius: 10px;
+  border-radius: 11px;
 }
 
 .col-sm-3 {
