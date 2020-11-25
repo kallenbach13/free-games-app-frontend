@@ -43,7 +43,7 @@ body {
 }
 
 .checkbox-field {
-  background-color:  #ffe4e9;
+  background-color:  rgb(236, 233, 233);
   border-radius: 18px;
   width: 450px;
 }
@@ -84,10 +84,7 @@ body {
 
 .game-card {
  background-color: #ffe1e6;
- width: 90%;
- border-style: solid;
- border-width: 1px;
- border-color: #8df5c8;
+ width: 100%;
  border-radius: 30px;
  padding-top: 10px;
  cursor: pointer;
