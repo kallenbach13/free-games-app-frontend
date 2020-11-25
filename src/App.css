@@ -96,9 +96,7 @@ body {
 #game-title {
   color: lightgrey;
   font-family: Arial, Helvetica, sans-serif, serif;
-  font-size: medium;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: black;
+  font-size: large;
 }
 
 #developer-name{
