@@ -33,7 +33,7 @@ body {
 .top-bar {
   display: flex;
   justify-content: space-around;
-  padding-top: 15px;
+  padding-top: 14px;
   padding-bottom: 15px;
 }
 
