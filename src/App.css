@@ -34,7 +34,7 @@ body {
   display: flex;
   justify-content: space-around;
   padding-top: 14px;
-  padding-bottom: 15px;
+  padding-bottom: 14px;
 }
 
 .overflow-auto {
