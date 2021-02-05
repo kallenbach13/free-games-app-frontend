@@ -85,7 +85,7 @@ body {
 .game-card {
  background-color: #fde3e8;
  width: 90%;
- border-radius: 26px;
+ border-radius: 25px;
  padding-top: 10px;
  cursor: pointer;
 }
